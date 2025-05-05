@@ -10,10 +10,11 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write .",
     "prepare": "husky",
     "test": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test ./tests/*.test.ts",
-    "test:update": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test --test-update-snapshots ./tests/*.test.ts"
+    "test:update": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test --test-update-snapshots ./tests/*.test.ts",
+    "prepack": "rm -rf dist && yarn build",
+    "release": "yarn publish --access public"
   },
   "bin": {
     "transcriber": "dist/cmd/index.js"
