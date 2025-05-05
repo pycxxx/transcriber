@@ -1,5 +1,5 @@
 {
-  "name": "transcriber",
+  "name": "@pycxxx/transcriber",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -13,8 +13,7 @@
     "prepare": "husky",
     "test": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test ./tests/*.test.ts",
     "test:update": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test --test-update-snapshots ./tests/*.test.ts",
-    "prepack": "rm -rf dist && yarn build",
-    "release": "yarn publish --access public"
+    "prepack": "rm -rf dist && yarn build"
   },
   "bin": {
     "transcriber": "dist/cmd/index.js"

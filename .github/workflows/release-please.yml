@@ -18,3 +18,17 @@ jobs:
         with:
           release-type: node
           target-branch: main
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.8.0'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@pycxxx'
+        if: ${{ steps.release.outputs.release_created }}
+      - run: yarn install --frozen-lockfile
+        if: ${{ steps.release.outputs.release_created }}
+      - run: yarn test
+        if: ${{ steps.release.outputs.release_created }}
+      - run: yarn publish --access public
+        if: ${{ steps.release.outputs.release_created }}
