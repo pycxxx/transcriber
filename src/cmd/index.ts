@@ -13,7 +13,11 @@ program
   .version('0.1.0')
   .option('-p, --prompt <prompt>', 'Prompt for transcription')
   .option('-c, --chunk-duration <chunkDuration>', 'Chunk duration in seconds', '600')
-  .option('-a, --api-provider <apiProvider>', 'API provider to use for transcription', 'local')
+  .option(
+    '-a, --api-provider <apiProvider>',
+    'API provider to use for transcription. local or openai',
+    'local',
+  )
   .option('-m, --model <model>', 'Model to use for transcription', 'tiny')
   .option('-o, --output <output>', 'Output file path')
   .option('-k, --api-key <apiKey>', 'API key')
