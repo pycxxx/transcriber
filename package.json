@@ -11,21 +11,29 @@
     "build": "tsc",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test ./tests/*.test.ts",
+    "test:update": "tsx -r tsconfig-paths/register --experimental-test-module-mocks --experimental-test-snapshots --test --test-update-snapshots ./tests/*.test.ts"
+  },
+  "bin": {
+    "transcriber": "dist/cmd/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/fluent-ffmpeg": "^2.1.27",
+    "@types/node": "^22.8.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.2.6",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
     "prettier": "^3.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.0.0"
   },
   "lint-staged": {
@@ -33,5 +41,12 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "nodejs-whisper": "^0.2.6",
+    "readable-web-to-node-stream": "^5.0.0",
+    "srt-parser-2": "^1.2.3"
   }
 }
