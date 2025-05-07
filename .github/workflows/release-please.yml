@@ -32,4 +32,6 @@ jobs:
       - run: yarn test
         if: ${{ steps.release.outputs.release_created }}
       - run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
