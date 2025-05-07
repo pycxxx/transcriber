@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/pycxxx/transcriber/compare/v1.1.2...v1.1.3) (2025-05-07)
+
+
+### Bug Fixes
+
+* trigger release ([8cf9d4b](https://github.com/pycxxx/transcriber/commit/8cf9d4bf86f9ebfb97655fc4ff1b2e8462c26562))
+
 ## [1.1.2](https://github.com/pycxxx/transcriber/compare/v1.1.1...v1.1.2) (2025-05-07)
 
 
